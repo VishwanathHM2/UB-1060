@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styling */
+body {
+  margin: 0;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* ================= SCAN ANIMATION ================= */
+
+@keyframes scan {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: calc(100% - 4px);
+  }
+}
+
+.animate-scan {
+  position: absolute;
+  left: 0;
+  animation: scan 2s ease-in-out infinite alternate;
+}
+
+/* ================= SIDE AMBIENT GLOW ================= */
+
+@keyframes sideGlow {
+  0% {
+    opacity: 0.15;
+    transform: translateY(-20%);
+  }
+  50% {
+    opacity: 0.35;
+  }
+  100% {
+    opacity: 0.15;
+    transform: translateY(20%);
+  }
+}
+
+.animate-sideGlow {
+  animation: sideGlow 6s ease-in-out infinite alternate;
+}
+
+/* ================= PANEL BREATHING GLOW ================= */
+
+@keyframes panelGlow {
+  0% {
+    box-shadow: 0 0 30px rgba(37, 80, 148, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(123, 142, 172, 0.12);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.05);
+  }
+}
+
+.animate-panelGlow {
+  animation: panelGlow 6s ease-in-out infinite;
+}
